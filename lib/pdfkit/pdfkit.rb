@@ -138,7 +138,7 @@ class PDFKit
   end
 
   def successful?(status)
-    return true if status.success?
+    return true if status.success? || @renderer.error_handling?
 
     # Some of the codes: https://code.google.com/p/wkhtmltopdf/issues/detail?id=1088
     # returned when assets are missing (404): https://code.google.com/p/wkhtmltopdf/issues/detail?id=548
